@@ -1,14 +1,9 @@
-# ev3 remote control using another brick
+# ev3 remote control
 
-Projekt Idee:
-
-Fernsteuerung eines ev3 bricks mit einem anderen ev3 brick
-
-Problem:
-	Ausprobieren der Motoren und testen eines Ev3-Projekts.
+This Projeks uses micropython to control an ev3 brick using another ev3 brick
 
 
-Lösung des Problems:
-	Python-libery zum kontrollieren der Motoren 	https://pypi.org/project/python-ev3dev2/
-	Python-libery für eine Remote-Verbindung 	https://thepythoncode.com/article/getting-started-with-scapy
-
+Liberys used i this projekt:
+<strong><a href="https://pypi.org/project/python-ev3dev2/">ev3dev2</a></strong>
+<strong><a href="[https://pypi.org/project/python-ev3dev2/](https://thepythoncode.com/article/getting-started-with-scapy
+)https://thepythoncode.com/article/getting-started-with-scapy">scapy</a></strong>
