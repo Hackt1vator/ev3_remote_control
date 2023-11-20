@@ -1,4 +1,4 @@
-# ev3_remote_control
+# ev3 remote control using another brick
 
 Projekt Idee:
 
