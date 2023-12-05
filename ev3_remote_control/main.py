@@ -22,11 +22,72 @@ ev3 = EV3Brick()
 def str_cut(cut_from:str, str_to_cut:str):
     result = ""
     for i in cut_from:
-        if not i == str_to_cut:
+        if not i in str_to_cut:
             result += i
-    return result
+    return resul
 
-def menu():
+
+def main_menu():
+    max_obj = 0; obj_list = []; cogj = 0; from_obj = 0; marked_index = 0
+    for i in obj_list: cogj += 1
+
+    obj_list[marked_index] = "->" + obj_list[marked_index]
+    for i in range(0, max_obj):
+        ev3.screen.print(obj_list[i])
+    
+    option = ""
+    while True:
+        if Button.DOWN in ev3.buttons.pressed():
+            sleep(0.4)
+            obj_list[marked_index] = str_cut(obj_list[marked_index], "->")
+            marked_index += 1
+            if marked_index < 0: marked_index = 0
+            obj_list[marked_index] = "->" + obj_list[marked_index]
+
+            if marked_index >= max_obj and cogj > max_obj and marked_index != cogj:
+                from_obj += 1; 
+                ev3.screen.clear()
+                for i in range(from_obj, (from_obj + max_obj) ):
+                    try: ev3.screen.print(obj_list[i])
+                    except IndexError: pass
+            else:
+                for i in range(from_obj, (from_obj + max_obj) ):
+                    try: ev3.screen.print(obj_list[i])
+                    except IndexError: pass
+            if marked_index == cogj:
+                marked_index -= 1
+
+        if Button.UP in ev3.buttons.pressed():
+            sleep(0.4)
+            obj_list[marked_index] = str_cut(obj_list[marked_index], "->")
+            marked_index -= 1
+            if marked_index < 0: marked_index = 0
+            obj_list[marked_index] = "->" + obj_list[marked_index]
+
+            if marked_index <= max_obj and cogj > max_obj:
+                from_obj -= 1; 
+                ev3.screen.clear()
+                for i in range(from_obj, (from_obj + max_obj) ):
+                    try: ev3.screen.print(obj_list[i])
+                    except IndexError: pass
+            else:
+                for i in range(from_obj, (from_obj + max_obj) ):
+                    try: ev3.screen.print(obj_list[i])
+                    except IndexError: pass
+        
+        if Button.CENTER in ev3.buttons.pressed():
+            option = obj_list[marked_index]; break
+
+    if option == "":
+    elif option == "":
+    elif option == "":
+    elif option == "":
+
+
+
+
+
+def block_connect():
     device_list = ["12:HD:23:12:32...", "123.2345.123", "123434567654323456"]
     marked_index = 0; rdevice = ""
 
@@ -41,6 +102,7 @@ def menu():
         ev3.screen.print(i)
 
     while True:
+        #add max and then max achieved marked = 0
         if Button.UP in ev3.buttons.pressed():
             sleep(0.5)
             device_list[marked_index] = str_cut(device_list[marked_index], "-")
