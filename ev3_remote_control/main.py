@@ -1,4 +1,8 @@
 #!/usr/bin/env pybricks-micropython
+import socket
+import threading
+from sys import exit
+from time import sleep
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
                                  InfraredSensor, UltrasonicSensor, GyroSensor)
@@ -15,6 +19,77 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 # Create your objects here.
 ev3 = EV3Brick()
 
+def str_cut(cut_from:str, str_to_cut:str):
+    result = ""
+    for i in cut_from:
+        if not i == str_to_cut:
+            result += i
+    return result
 
-# Write your program here.
-ev3.speaker.beep()
+def menu():
+    device_list = ["12:HD:23:12:32...", "123.2345.123", "123434567654323456"]
+    marked_index = 0; rdevice = ""
+
+    ev3.screen.print("Hello World\nPress [enter]\nto continue")
+
+    while True: 
+        #device_list = bluethouth.scan()
+        if Button.CENTER in ev3.buttons.pressed(): ev3.screen.clear(); sleep(2); break
+
+    device_list[marked_index] = "-" + device_list[marked_index]
+    for i in device_list:
+        ev3.screen.print(i)
+
+    while True:
+        if Button.UP in ev3.buttons.pressed():
+            sleep(0.5)
+            device_list[marked_index] = str_cut(device_list[marked_index], "-")
+            ev3.screen.clear()
+            try: marked_index -= 1; device_list[marked_index] = "-" + device_list[marked_index]
+            except IndexError: pass
+            for i in device_list:
+                ev3.screen.print(i)
+        if Button.DOWN in ev3.buttons.pressed():
+            sleep(0.5)
+            print(device_list[marked_index]); print(device_list[0])
+            device_list[marked_index] = str_cut(device_list[marked_index], "-")
+            marked_index += 1; ev3.screen.clear()
+            try:device_list[marked_index] = "-" + device_list[marked_index]
+            except IndexError: pass
+            for i in device_list:
+                ev3.screen.print(i)
+        if Button.CENTER in ev3.buttons.pressed():
+            rdevive = str_cut(device_list[marked_index], "-")
+            ev3.screen.clear(); break
+    
+    ev3.screen.print(str_cut(device_list[marked_index], "-"))
+    sleep(3)
+    exit(0)
+
+
+
+
+
+    #ev3.speaker.say("hi")
+menu()
+sleep(5)
+
+while True:
+    if Button.UP in ev3.buttons.pressed():
+        print("up pressed")
+        ev3.speaker.beep()
+    if Button.DOWN in ev3.buttons.pressed():
+        print("down pressed")
+        ev3.speaker.beep()
+    if Button.RIGHT in ev3.buttons.pressed():
+        print("right pressed")
+        ev3.speaker.beep()
+    if Button.LEFT in ev3.buttons.pressed():
+        print("left pressed")
+        ev3.speaker.beep()
+    if Button.CENTER in ev3.buttons.pressed():
+        print("center pressed")
+        ev3.speaker.beep()
+
+#print out to pc
+#Program ended by stop button
