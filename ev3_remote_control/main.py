@@ -28,7 +28,7 @@ def str_cut(cut_from:str, str_to_cut:str):
 
 
 def main_menu():
-    max_obj = 0; obj_list = []; cogj = 0; from_obj = 0; marked_index = 0
+    max_obj = 0; obj_list = []; cobj = 0; from_obj = 0; marked_index = 0
     for i in obj_list: cogj += 1
 
     obj_list[marked_index] = "->" + obj_list[marked_index]
@@ -44,7 +44,7 @@ def main_menu():
             if marked_index < 0: marked_index = 0
             obj_list[marked_index] = "->" + obj_list[marked_index]
 
-            if marked_index >= max_obj and cogj > max_obj and marked_index != cogj:
+            if marked_index >= max_obj and cobj > max_obj and marked_index != cogj:
                 from_obj += 1; 
                 ev3.screen.clear()
                 for i in range(from_obj, (from_obj + max_obj) ):
@@ -76,7 +76,7 @@ def main_menu():
                     except IndexError: pass
         
         if Button.CENTER in ev3.buttons.pressed():
-            option = obj_list[marked_index]; break
+            option = str_cut(obj_list[marked_index], "->"); break
 
     if option == "":
     elif option == "":
