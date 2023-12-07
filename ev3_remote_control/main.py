@@ -24,7 +24,7 @@ def str_cut(cut_from:str, str_to_cut:str):
     for i in cut_from:
         if not i in str_to_cut:
             result += i
-    return resul
+    return result
 
 
 def main_menu():
