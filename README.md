@@ -22,4 +22,5 @@ Donate to developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">
 # Common Issues
 
 -using Motors connected to Sensor-Ports(1,2,3,4) may raise errors
+
 -when using single_motor(sm), left and right will only let the ev3 drive forward and backwards
