@@ -201,7 +201,7 @@ def clmotor_control(mbox, direction, speed, ports): # receives the pressed butto
             break
     ev3.screen.clear()
 
-def svcontrol(mbox):
+def svcontrol(mbox): # controls the motors based on the commands received from the client
     old_ports = ""; db = 0 # DriveBase object
     try:
         while True:
