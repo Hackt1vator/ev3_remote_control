@@ -1,4 +1,4 @@
-#copied source file from ev3dev micropython
+#copied source file from ev3dev micropython: https://github.com/pybricks/debian-pybricks-micropython3/blob/ev3dev-stretch/bricks/ev3dev/modules/pybricks/messaging.py
 #changed so not only names but mac-addresses can be used too
 from _thread import allocate_lock
 from uerrno import ECONNRESET
