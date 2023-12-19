@@ -81,6 +81,7 @@ def get_motor(motor):
     elif motor == "B": return Motor(Port.B)
     elif motor == "C": return Motor(Port.C)
     elif motor == "D": return Motor(Port.D)
+    #using Sensor Ports (1,2,3,4) may raise errors
     elif motor == "S1": return Motor(Port.S1)
     elif motor == "S2": return Motor(Port.S2)
     elif motor == "S3": return Motor(Port.S3)
