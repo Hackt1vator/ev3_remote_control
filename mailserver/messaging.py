@@ -1,3 +1,5 @@
+#copied source file from ev3dev micropython
+#changed so not only names but mac-addresses can be used too
 from _thread import allocate_lock
 from uerrno import ECONNRESET
 from ustruct import pack, unpack
