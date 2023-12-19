@@ -303,7 +303,8 @@ def get_addrs(filename):
 
 def rc_server_handler():
     rc_connections = rc_server()
-    svcontrol(rc_connections[0])
+    try: svcontrol(rc_connections[0])
+    except: rc_server_handler() # restart, when error
 
 def rc_client_handler():
     direction = 10; speed = 50; ports = "tm-A-B"
