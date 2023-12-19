@@ -5,5 +5,7 @@ import subprocess
 pwd = "maker"
 proc = subprocess.Popen("/bin/bash", stdin.PIPE, stdout.PIPE)
 
-proc.write("sudo " + str(os.getcwd()).removesuffix("/") + "/setup_brick.sh")
+proc.write("sudo chmod +777 " + str(os.getcwd()).removesuffix("/") + "/setup_brick.sh")
+
+proc.write("sudo ./setup_brick.sh")
 proc.write(pwd)
