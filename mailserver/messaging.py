@@ -258,4 +258,3 @@ class BluetoothMailboxClient(MailboxHandlerMixIn):
         for client in self._clients.values():
             client.client_close()
         self._clients.clear()
-        #https://github.com/pybricks/pybricks-projects/blob/master/tutorials/wireless/hub-to-hub/broadcast/vehicle.py
