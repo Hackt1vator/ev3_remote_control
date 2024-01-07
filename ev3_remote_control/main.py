@@ -164,8 +164,6 @@ def rc_server(): # listens for a connection and validates it, returns the connec
     ev3.screen.print('waiting...')
     server.wait_for_connection()
     ev3.screen.print('connected!')
-    serial_number = ev3.serial_number()
-    ev3.screen.print(f'Found Brick with serial {serial_number}!')
 
     mbox.wait()
     if mbox.read() != "req": rc_server_handler()
@@ -184,8 +182,6 @@ def rc_client(addr): # sets up the connection and validates it, returns the conn
     mbox.send('req')
     mbox.wait()
     if mbox.read() != "ack": rc_client_handler()
-    serial_number = ev3.serial_number()
-    ev3.screen.print(f'Found Brick with serial {serial_number}!')
 
     return [mbox, client_box]
 
