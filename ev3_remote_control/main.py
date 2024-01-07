@@ -3,6 +3,8 @@
 #note that ev3dev-micropython doesn't support all libraries, but if you run python
 #scripts seperat, without pybricks/micropython they should work fine
 
+#Import libraries
+
 #import os
 #import threading
 from sys import exit
