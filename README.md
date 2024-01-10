@@ -7,8 +7,6 @@ Liberys used in this project:
 
 <strong><a href="https://pypi.org/project/python-ev3dev2/">ev3dev2</a></strong>
 
-Donate to developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">buymeacoffee</a></strong>
-
 # Requirements
 
 - PC with macos or windows
