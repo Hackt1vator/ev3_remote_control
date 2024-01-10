@@ -21,25 +21,25 @@ Donate to developer: <strong><a href="https://www.buymeacoffee.com/Hacktivator">
 
 # How to run
 
-    -Download the Micropython-Ev3 image from: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt9df409c9a182ab9c/5f88191a6ffd1b42dc42b8af/ev3micropythonv200sdcardimage.zip?locale=en-us
+- Download the Micropython-Ev3 image from: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt9df409c9a182ab9c/5f88191a6ffd1b42dc42b8af/ev3micropythonv200sdcardimage.zip?locale=en-us
     
-    -Flash the Micro-SD cards from the image-file (using for example https://etcher.balena.io/)
+- Flash the Micro-SD cards from the image-file (using for example https://etcher.balena.io/)
     
-    -Plug the Mini-USB-Cable in and connect your computer with the Ev3-Brick (using for example VS-Code)
+- Plug the Mini-USB-Cable in and connect your computer with the Ev3-Brick (using for example VS-Code)
 
-    -Download the remote control code and unzip it
+- Download the remote control code and unzip it
 
-    -Open the folder with the code in VS-Code and upload the code to the Ev3-Bricks
+- Open the folder with the code in VS-Code and upload the code to the Ev3-Bricks
 
-    -Leave the hostnames on default or set them to default by running setup_brick.SSH
+- Leave the hostnames on default or set them to default by running setup_brick.SSH
 
-    -Pair the two Ev3-Bricks using the "Wireless-Connections" and "Bluetooth" option then booting up the Ev3-Bricks
+- Pair the two Ev3-Bricks using the "Wireless-Connections" and "Bluetooth" option then booting up the Ev3-Bricks
 
-    -Select a server (controlled device) and a client (controlling device)
+- Select a server (controlled device) and a client (controlling device)
 
-    -On the client-side, select the mac-address of the server or the only mac-address displayed (you can add mac-address by writing them into the "mac_addrs.txt" file)
+- On the client-side, select the mac-address of the server or the only mac-address displayed (you can add mac-address by writing them into the "mac_addrs.txt" file)
 
-    -The connection between the Ev3-Bricks has now been established!
+- The connection between the Ev3-Bricks has now been established!
 
 # Common Issues
 
